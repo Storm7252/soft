@@ -1,4 +1,4 @@
-﻿@model Softst.Models.Student
+﻿@model IEnumerable<Softst.Models.Student>
 
 
 @{
@@ -8,68 +8,72 @@
 
 <h1 class="alert-info " style="display:inline-block"> Student Detail</h1>
 
-<div>
-   
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StudentId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.StudentId)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FathersName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FathersName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DOB)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DOB)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AdhaarNo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AdhaarNo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DateOfRegister)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DateOfRegister)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CourseId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CourseId)
-        </dd>
-       
-    </dl>
-</div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.StudentId }) |
-    <a asp-action="StudentsDetails">Back to List</a>
-</div>
+@foreach(var item in Model)
+{
+    <div>
+
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                 StudentId
+            </dt>
+            <dd class="col-sm-10">
+                @item.StudentId
+            </dd>
+            <dt class="col-sm-2">
+                Name
+            </dt>
+            <dd class="col-sm-10">
+                @item.Name
+            </dd>
+            <dt class="col-sm-2">
+              Email
+            </dt>
+            <dd class="col-sm-10">
+               @item.Email
+            </dd>
+            <dt class="col-sm-2">
+               FathersName
+            </dt>
+            <dd class="col-sm-10">
+                @item.FathersName
+            </dd>
+            <dt class="col-sm-2">
+              Address
+            </dt>
+            <dd class="col-sm-10">
+                 @item.Address
+            </dd>
+            <dt class="col-sm-2">
+                 DOB
+            </dt>
+            <dd class="col-sm-10">
+                @item.DOB
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.AdhaarNo)
+            </dt>
+            <dd class="col-sm-10">
+               model.AdhaarNo
+            </dd>
+            <dt class="col-sm-2">
+               DateOfRegister
+            </dt>
+            <dd class="col-sm-10">
+                @item.DateOfRegister
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Course.CourseName)
+            </dt>
+            <dd class="col-sm-10">
+                @item.Course.CourseName
+            </dd>
+
+        </dl>
+    </div>
+    <div>
+        @Html.ActionLink("Edit", "Edit", new { id = @item.StudentId }) |
+        <a asp-action="StudentsDetails">Back to List</a>
+    </div>
+
+}

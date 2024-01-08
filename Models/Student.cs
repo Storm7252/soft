@@ -39,6 +39,8 @@ namespace Softst.Models
         [DataType(DataType.Date)]
         public DateTime DateOfRegister { get; set; }
 
+        public string profileUrl { get; set; }
+
         [Required]
         public int CourseId { get; set; }
 

@@ -43,13 +43,13 @@ namespace Softst.Controllers
         }
         public async Task<IActionResult> Details(int Id)
         {
-            var res = await _studata.getStudentDetails(Id);
+            List<Student> res = _studata.getStudentDetails(Id);
             
             return View(res);
         }
         public async Task<IActionResult> Edit(int Id)
         {
-            var res = await _studata.getStudentDetails(Id);
+            var res = _studata.getStudentDetails(Id);
             ViewBag.data = stucon.Courses.ToList();
             return View(res);
         }

@@ -252,3 +252,4 @@ C:\Users\Darsa\Desktop\Web dev data\Softst\obj\Debug\net8.0\refint\Softst.dll
 C:\Users\Darsa\Desktop\Web dev data\Softst\obj\Debug\net8.0\Softst.pdb
 C:\Users\Darsa\Desktop\Web dev data\Softst\obj\Debug\net8.0\Softst.genruntimeconfig.cache
 C:\Users\Darsa\Desktop\Web dev data\Softst\obj\Debug\net8.0\ref\Softst.dll
+C:\Users\Darsa\Desktop\Web dev data\Softst\obj\Debug\net8.0\Softst.sourcelink.json

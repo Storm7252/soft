@@ -1,4 +1,5 @@
-﻿using Softst.DatabaseContext;
+﻿using Microsoft.EntityFrameworkCore;
+using Softst.DatabaseContext;
 using Softst.Models;
 
 namespace Softst.StudentRepository
@@ -35,9 +36,9 @@ namespace Softst.StudentRepository
             var res = _context.Students.ToList();
             return res;
         }
-        public async Task<Student> getStudentDetails(int Id)
+        public  List<Student> getStudentDetails(int Id)
         {
-            var res = _context.Students.Where(opt => opt.StudentId == Id).FirstOrDefault();
+            var res = _context.Students.Where(opt => opt.StudentId == Id).Include(Course=>Course.Course).ToList();
             return res;
         }
 

@@ -17,7 +17,7 @@ namespace Softst.StudentRepository
         void Addstudent(Student cor);
         Task<List<Student>> getstudent();
 
-        Task<Student> getStudentDetails(int Id);
+        List<Student> getStudentDetails(int Id);
         void UpdateStudent(Student stu);
 
         void DeleteStudent(int Id);

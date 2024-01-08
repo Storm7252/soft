@@ -10,42 +10,23 @@
 <p>
     <a asp-action="StudentRegister">Register New Student</a>
 </p>
-<table class="table bg-gradient">
-    <thead class="alert-info">
-        <tr >
-            <th>
-                @Html.DisplayNameFor(model => model.StudentId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-           
-            <th>
-                @Html.DisplayNameFor(model => model.FathersName)
-            </th>
-           
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+
 @foreach (var item in Model) {
-            <tr class="alert-warning">
-            <td>
-                @Html.DisplayFor(modelItem => item.StudentId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-           
-            <td>
-                @Html.DisplayFor(modelItem => item.FathersName)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.StudentId}) |
-                    @Html.ActionLink("Details", "Details", new { id = item.StudentId }) |
-                    @Html.ActionLink("Delete", "DeleteStudent", new { id = item.StudentId })
-            </td>
-        </tr>
+                <div class="card" style="width: 18rem; display:inline-block;background-color:burlywood" >
+                <img class="card-img-top" src="https://cdn.mos.cms.futurecdn.net/ohsXtgy8Hmi9PzDNpKhJ5N.jpg" alt="Card image cap">
+                    <div class="card-body">   
+                    </div>
+                    <ul class="list-group list-group-flush ">
+                        <li class="list-group-item " style="background-color:burlywood">@item.StudentId</li>
+                        <li class="list-group-item " style="background-color:burlywood">@item.Name</li>
+                        <li class="list-group-item " style="background-color:burlywood">@item.FathersName</li>
+                    </ul>
+                    <div class="card-body">
+                         <button class="btn btn alert-info"> @Html.ActionLink("Edit", "Edit", new { id = item.StudentId })</button>
+                        <button class="btn btn alert-info"> @Html.ActionLink("Details", "Details", new { id = item.StudentId })</button>
+                        <button class="btn btn-danger">@Html.ActionLink("Delete", "DeleteStudent", new { id = item.StudentId })</button>
+                    </div>
+                </div> 
 }
-    </tbody>
-</table>
+   
+
